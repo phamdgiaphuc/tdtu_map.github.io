@@ -1,0 +1,202 @@
+/* === Global Styles === */
+* {
+  box-sizing: border-box;
+  font-family: "Inter", "Roboto", sans-serif;
+  transition: all 0.2s ease;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #1e1e2f, #27293d);
+  color: #f3f3f3;
+  overflow: hidden;
+}
+
+/* === Layout === */
+#container {
+  display: flex;
+  height: 100vh;
+}
+
+/* === Sidebar === */
+#side {
+  width: 320px;
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#side h3 {
+  text-align: center;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  color: #ffd369;
+  letter-spacing: 0.5px;
+}
+
+#side label {
+  display: block;
+  margin-top: 10px;
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+/* === Canvas === */
+#mapCanvas {
+  flex: 1;
+  display: block;
+  background-color: #0f1016;
+  cursor: grab;
+}
+#mapCanvas:active {
+  cursor: grabbing;
+}
+
+/* === Buttons === */
+button, .btn {
+  background: linear-gradient(135deg, #3a86ff, #00b4d8);
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.95em;
+  cursor: pointer;
+  margin: 5px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+button:hover, .btn:hover {
+  background: linear-gradient(135deg, #4895ef, #48cae4);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+/* === Range slider === */
+input[type="range"] {
+  width: 100%;
+  accent-color: #ffd369;
+  cursor: pointer;
+}
+
+/* === Textarea === */
+textarea {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 0.9em;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #3a86ff;
+}
+
+/* === Header === */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  color: #f1f1f1;
+  z-index: 100;
+  backdrop-filter: blur(6px);
+}
+
+header h1 {
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffd369;
+}
+
+/* === Help Button === */
+#helpBtn {
+  background: linear-gradient(135deg, #ff9f1c, #ffbf69);
+  color: #1e1e2f;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 8px 16px;
+}
+
+#helpBtn:hover {
+  background: linear-gradient(135deg, #ffd369, #ffb703);
+  transform: scale(1.05);
+}
+
+/* === Modal Help === */
+#helpModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+#helpModal.active {
+  display: flex;
+}
+
+#helpModal .content {
+  background: #2b2d42;
+  border-radius: 12px;
+  padding: 25px 30px;
+  width: 450px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  color: #f1f1f1;
+}
+
+#helpModal h2 {
+  color: #ffd369;
+  margin-bottom: 10px;
+}
+
+#helpModal ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.6;
+}
+
+#helpModal ul li::before {
+  content: "• ";
+  color: #3a86ff;
+  font-weight: bold;
+}
+
+#helpModal button.close {
+  background: #ef233c;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  float: right;
+  cursor: pointer;
+}
+
+#helpModal button.close:hover {
+  background: #d90429;
+}
